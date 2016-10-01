@@ -9,6 +9,10 @@ var mainApp = angular.module("mainApp", ['ngRoute','datatables','checklist-model
         templateUrl:"anggotaassesi",
         controller:'anggotaassesi'
       })
+      .when('/jadwalasesment', {
+        templateUrl:"jadwalasesment",
+        controller:'jadwalasesment'
+      })
  });
 
 
@@ -145,4 +149,20 @@ mainApp.controller('anggotaassesi',function($scope,$http,DTColumnBuilder,DTOptio
   })
  };
 
+})
+mainApp.controller('jadwalasesment',function($scope,$http,DTColumnBuilder,DTOptionsBuilder){
+  $scope.dtOptions = DTOptionsBuilder.newOptions()
+
+    .withDisplayLength(5)
+        .withOption('bLengthChange', false)
+        .withOption('autoWidth', false)
+        .withOption('scrollX', false)
+      $scope.disabled = false;
+  $scope.getdata=function(){
+    $http.get("lihat_datauser").success(function(data){
+      $scope.datauser= data
+    })
+  }
+  $scope.getdata();
+ 
 })

@@ -60,7 +60,7 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>S</b>U</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
@@ -344,18 +344,6 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
-        </li>
         <li>
           <a href="#/datauser">
             <i class="fa fa-users"></i> <span>Data User</span>
@@ -367,6 +355,11 @@
         <li>
           <a href="#/anggotaassesi">
             <i class="fa fa-users"></i> <span>Data Anggota Assesi</span>
+          </a>
+        </li>
+        <li>
+          <a href="#/jadwalasesment">
+            <i class="fa fa-calendar"></i> <span>Jadwal Asesment</span>
           </a>
         </li>
       </ul>

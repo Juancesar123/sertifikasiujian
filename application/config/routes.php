@@ -56,5 +56,6 @@ $route['insert_anggota_asesi']='Anggotaasesi/insertasesi';
 $route['ambil_anggota_asesi']='Anggotaasesi/selectasesi';
 $route['ubah_anggota_asesi']='Anggotaasesi/ubahasesi';
 $route['hapus_anggota_asesi']='Anggotaasesi/hapusasesi';
+$route['jadwalasesment'] = 'Jadwal_asesment';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
