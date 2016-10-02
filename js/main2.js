@@ -159,10 +159,44 @@ mainApp.controller('jadwalasesment',function($scope,$http,DTColumnBuilder,DTOpti
         .withOption('scrollX', false)
       $scope.disabled = false;
   $scope.getdata=function(){
-    $http.get("lihat_datauser").success(function(data){
-      $scope.datauser= data
+    $http.get("lihat_jadwal_asesment").success(function(data){
+      $scope.jadwalasesment= data
     })
   }
   $scope.getdata();
- 
+ $scope.simpan=function(){
+  var nama = $scope.jadwal;
+  var tanggal = $scope.tanggal;
+  var tanggalakhir = $scope.tanggalakhir;
+  $http.post("simpan_jadwal_asesment",{nama:nama,tanggal:tanggal,tanggalakhir:tanggalakhir}).success(function(){
+    alert("data sukses di simpan");
+    $scope.getdata();
+  })
+ }
+ $scope.edit = function(item){
+  $scope.jadwal = item.nama;
+  $scope.tanggal = item.tanggal;
+  $scope.tanggalakhir = item.tanggal_akhir;
+  $scope.id = item.id;
+ }
+ $scope.actionedit = function(){
+  var nama = $scope.jadwal;
+  var tanggal = $scope.tanggal;
+  var tanggalakhir = $scope.tanggalakhir;
+  var id = $scope.id;
+  $http.post("ubah_jadwal_asesment",{id:id,nama:nama,tanggal:tanggal,tanggalakhir:tanggalakhir}).success(function(){
+    alert("data sukses di ubah");
+    $scope.getdata();
+  })
+ }
+ $scope.user={
+  hapusjadwalasesment:[]
+ }
+ $scope.hapus=function(){
+  var id = $scope.user;
+  $http.post("hapus_jadwal_asesment",{id:id}).success(function(){
+    alert("data sukses di hapus");
+    $scope.getdata();
+  })
+ }
 })
