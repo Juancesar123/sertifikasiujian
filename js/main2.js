@@ -37,12 +37,31 @@ mainApp.controller('datauser',function($scope,$http,DTColumnBuilder,DTOptionsBui
         .withOption('scrollX', false)
       $scope.disabled = false;
   $scope.getdata=function(){
-    $http.get("lihat_datauser").success(function(data){
+    $http.get("lihat_data_user").success(function(data){
       $scope.datauser= data
     })
   }
   $scope.getdata();
- 
+ $scope.user={
+  hapusdatauser:[]
+ }
+ $scope.simpan = function(){
+  var firstname = $scope.firstname;
+  var lastname = $scope.lastname;
+  var email = $scope.email;
+  var password = $scope.password;
+  $http.post("simpan_data_user",{firstname:firstname,lastname:lastname,email:email,password:password}).success(function(){
+    alert("data sukses di simpan");
+    $scope.getdata();
+  })
+ }
+ $scope.hapus = function(){
+  var id = $scope.user;
+  $http.post("hapus_data_user",{id:id}).success(function(){
+    alert("data sukses di hapus");
+    $scope.getdata();
+  })
+ }
 })
 
 mainApp.controller('anggotaassesi',function($scope,$http,DTColumnBuilder,DTOptionsBuilder){

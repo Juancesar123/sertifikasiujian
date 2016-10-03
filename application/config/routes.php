@@ -51,6 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Home';
 $route['data_user']='datauser';
+$route['lihat_data_user']='datauser/ambildatauser';
+$route['hapus_data_user']='datauser/hapusdatauser';
+$route['simpan_data_user']='datauser/insertdatauser';
 $route['anggotaassesi']='Anggotaasesi';
 $route['insert_anggota_asesi']='Anggotaasesi/insertasesi';
 $route['ambil_anggota_asesi']='Anggotaasesi/selectasesi';
